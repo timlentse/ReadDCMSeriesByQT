@@ -1,5 +1,9 @@
 ReadDCMSeriesByQT
 =================
+### requirement
+* VTK libs
+* Qt
+
 ### Screenshot
 ![alt tag](https://raw.githubusercontent.com/timlentse/ReadDCMSeriesByQT/master/screenshot1.png)
 

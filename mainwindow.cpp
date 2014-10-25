@@ -1,3 +1,8 @@
+/**
+@ simple software for reading DICM slices
+@author£»timlentse
+@email: tinglenxan@gmail.com
+*/
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -6,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->setWindowTitle(tr("A program for reading dicom series"));
+    this->setWindowTitle(tr("A program for reading DICM series"));
     ui->toolBar->setFixedHeight(30);
     readerDCMSeries = vtkSmartPointer<vtkDICOMImageReader>::New();
     imageViewerDCMSeriesX = vtkSmartPointer<vtkImageViewer2>::New();
@@ -52,7 +57,6 @@ void MainWindow::drawDCMSeries(std::string folderDCM)
     imageViewerDCMSeriesX->SetSlice(1);
     imageViewerDCMSeriesX->SetupInteractor(ui->vtkRenderer->GetRenderWindow()->GetInteractor());
     ui->vtkRenderer->SetRenderWindow(imageViewerDCMSeriesX->GetRenderWindow());
-    //imageViewerDCMSeriesX->SetRenderWindow(ui->vtkRenderer->GetRenderWindow());
     imageViewerDCMSeriesX->Render();
 }
 
